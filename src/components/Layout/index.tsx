@@ -8,11 +8,11 @@ interface Props {
   description?: string,
   socialImage?: string
 }
+
 const Layout:FC<Props> = ({ children, title, description, socialImage = '' }) => {
   const { author, url } = useSiteMetadata()
   const metaImage = socialImage || author.photo
   const metaImageUrl = url + metaImage
-
   return (
     <div className={styles.layout}>
       <Helmet>

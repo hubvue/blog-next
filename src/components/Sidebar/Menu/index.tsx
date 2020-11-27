@@ -5,7 +5,7 @@ import { Menu  } from '../../../types'
 interface Props {
   menus: Menu[]
 }
-const Menu:FC<Props> = ({ menus }) => (
+const MenuFC:FC<Props> = ({ menus }) => (
   <nav className={styles['menu']}>
     <ul className={styles['menu__list']}>
       {menus.map((menu) => (
@@ -23,4 +23,4 @@ const Menu:FC<Props> = ({ menus }) => (
   </nav>
 )
 
-export default Menu
+export default MenuFC
