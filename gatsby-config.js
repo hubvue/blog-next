@@ -131,6 +131,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify',
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
