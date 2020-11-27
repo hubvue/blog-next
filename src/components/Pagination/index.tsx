@@ -1,27 +1,19 @@
 // @flow strict
-import React from 'react';
-import classNames from 'classnames/bind';
-import { Link } from 'gatsby';
-import { PAGINATION } from '@/constants';
-import styles from './index.scss';
+import React, { FC } from 'react'
+import { Link } from 'gatsby'
+import { PAGINATION } from '../../constants'
+import styles from './index.scss'
 
-const cx = classNames.bind(styles);
+interface Props {
+  prevPagePath: string
+  nextPagePath: string
+  hasNextPage: boolean
+  hasPrevPage: boolean
+}
 
-const Pagination = ({
-  prevPagePath,
-  nextPagePath,
-  hasNextPage,
-  hasPrevPage
-}) => {
-  const prevClassName = cx({
-    'pagination__prev-link': true,
-    'pagination__prev-link--disable': !hasPrevPage
-  });
-
-  const nextClassName = cx({
-    'pagination__next-link': true,
-    'pagination__next-link--disable': !hasNextPage
-  });
+const Pagination:FC<Props> = ({ prevPagePath, nextPagePath, hasNextPage, hasPrevPage }) => {
+  const prevClassName = hasPrevPage ? 'pagination__prev-link' : 'pagination__prev-link pagination__prev-link--disable'
+  const nextClassName = hasNextPage ? 'pagination__next-link' : 'pagination__next-link pagination__next-link--disable'
 
   return (
     <div className={styles['pagination']}>
@@ -32,7 +24,7 @@ const Pagination = ({
         <Link rel="next" to={hasNextPage ? nextPagePath : '/'} className={nextClassName}>{PAGINATION.NEXT_PAGE}</Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

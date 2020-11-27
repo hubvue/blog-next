@@ -1,17 +1,20 @@
-// @flow strict
-import React from 'react';
-import { Link } from 'gatsby';
-import Author from './Author';
-import Comments from './Comments';
-import Content from './Content';
-import Meta from './Meta';
-import Tags from './Tags';
-import styles from './index.scss';
+import React, { FC } from 'react'
+import { Link } from 'gatsby'
+import Author from './Author'
+import Comments from './Comments'
+import Content from './Content'
+import Meta from './Meta'
+import Tags from './Tags'
+import styles from './index.scss'
+import { Node } from '../../types'
+interface Props {
+  post: Node
+}
 
-const Post = ({ post }) => {
-  const { html } = post;
-  const { tagSlugs, slug } = post.fields;
-  const { tags, title, date } = post.frontmatter;
+const Post: FC<Props> = ({ post }) => {
+  const { html } = post
+  const { tagSlugs, slug } = post.fields
+  const { tags, title, date } = post.frontmatter
 
   return (
     <div className={styles['post']}>
@@ -31,7 +34,7 @@ const Post = ({ post }) => {
         <Comments postSlug={slug} postTitle={post.frontmatter.title} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

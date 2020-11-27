@@ -1,17 +1,17 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useSiteMetadata } from '@/hooks';
-import styles from './index.scss';
-
-const Layout = ({
-  children,
-  title,
-  description,
-  socialImage = ''
-}) => {
-  const { author, url } = useSiteMetadata();
-  const metaImage = socialImage || author.photo;
-  const metaImageUrl = url + metaImage;
+import React, { FC, ReactNode } from 'react'
+import { Helmet } from 'react-helmet'
+import { useSiteMetadata } from '../../hooks'
+import styles from './index.scss'
+interface Props {
+  children: ReactNode,
+  title: string,
+  description?: string,
+  socialImage?: string
+}
+const Layout:FC<Props> = ({ children, title, description, socialImage = '' }) => {
+  const { author, url } = useSiteMetadata()
+  const metaImage = socialImage || author.photo
+  const metaImageUrl = url + metaImage
 
   return (
     <div className={styles.layout}>
@@ -28,7 +28,7 @@ const Layout = ({
       </Helmet>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

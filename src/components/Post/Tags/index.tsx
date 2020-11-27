@@ -1,9 +1,12 @@
-// @flow strict
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import styles from './index.scss';
+interface Props {
+  tags: string[]
+  tagSlugs: string[]
+}
 
-const Tags = ({ tags, tagSlugs }) => (
+const Tags:FC<Props> = ({ tags, tagSlugs }) => (
   <div className={styles['tags']}>
     <ul className={styles['tags__list']}>
       {tagSlugs && tagSlugs.map((slug, i) => (
@@ -15,6 +18,6 @@ const Tags = ({ tags, tagSlugs }) => (
       ))}
     </ul>
   </div>
-);
+)
 
-export default Tags;
+export default Tags

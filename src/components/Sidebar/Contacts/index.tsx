@@ -1,9 +1,12 @@
-import React from 'react';
-import { getContactHref, getIcon } from '@/utils';
-import Icon from '@/components/Icon';
-import styles from './index.scss';
+import React, { FC } from 'react'
+import { getContactHref, getIcon } from '../../../utils'
+import Icon from '../../Icon'
+import styles from './index.scss'
+interface Props {
+  contacts: Record<string, string>
+}
 
-const Contacts = ({ contacts }) => (
+const Contacts:FC<Props> = ({ contacts }) => (
   <div className={styles['contacts']}>
     <ul className={styles['contacts__list']}>
       {Object.keys(contacts).map((name) => (!contacts[name] ? null : (
@@ -20,6 +23,6 @@ const Contacts = ({ contacts }) => (
       )))}
     </ul>
   </div>
-);
+)
 
-export default Contacts;
+export default Contacts

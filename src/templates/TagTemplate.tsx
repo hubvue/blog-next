@@ -1,14 +1,20 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
-import Sidebar from '@/components/Sidebar/index';
-import Feed from '@/components/Feed/index';
-import Page from '@/components/Page';
-import Pagination from '@/components/Pagination';
-import { useSiteMetadata } from '@/hooks';
+import React, { FC } from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Sidebar from '../components/Sidebar/index'
+import Feed from '../components/Feed/index'
+import Page from '../components/Page'
+import Pagination from '../components/Pagination'
+import { useSiteMetadata } from '../hooks'
+import { AllMarkDownRemark, PageContext } from '../types'
 
-const TagTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+interface Props {
+  data: AllMarkDownRemark,
+  pageContext: PageContext
+}
+
+const TagTemplate:FC<Props> = ({ data, pageContext }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata()
 
   const {
     tag,
@@ -17,10 +23,12 @@ const TagTemplate = ({ data, pageContext }) => {
     nextPagePath,
     hasPrevPage,
     hasNextPage
-  } = pageContext;
+  } = pageContext
 
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
+  const { edges } = data.allMarkdownRemark
+  const pageTitle = currentPage > 0 
+        ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` 
+        : `All Posts tagged as "${tag}" - ${siteTitle}`
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -35,8 +43,8 @@ const TagTemplate = ({ data, pageContext }) => {
         />
       </Page>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query TagPage($tag: String, $postsLimit: Int!, $postsOffset: Int!) {
@@ -68,6 +76,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default TagTemplate;
+export default TagTemplate

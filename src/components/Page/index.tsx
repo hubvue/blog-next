@@ -1,12 +1,16 @@
-import React, { useRef, useEffect } from 'react';
-import styles from './index.scss';
+import React, { useRef, useEffect, ReactNode, FC } from 'react'
+import styles from './index.scss'
 
-const Page = ({ title, children }) => {
-  const pageRef = useRef();
+interface Props {
+  title?: string
+  children: ReactNode
+}
+const Page:FC<Props> = ({ title, children }) => {
+  const pageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    pageRef.current.scrollIntoView();
-  });
+    pageRef.current?.scrollIntoView()
+  })
 
   return (
     <div ref={pageRef} className={styles['page']}>
@@ -17,7 +21,7 @@ const Page = ({ title, children }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

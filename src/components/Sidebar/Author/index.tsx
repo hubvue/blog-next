@@ -1,8 +1,18 @@
-import React from 'react';
-import { withPrefix, Link } from 'gatsby';
-import styles from './index.scss';
+import React, { FC } from 'react'
+import { withPrefix, Link } from 'gatsby'
+import styles from './index.scss'
 
-const Author = ({ author, isIndex }) => (
+interface Author {
+  name: string
+  bio: string
+  photo: string
+}
+interface Props {
+  author: Author
+  isIndex?: boolean
+  
+}
+const Author:FC<Props> = ({ author, isIndex }) => (
   <div className={styles['author']}>
     <Link to="/">
       <img
@@ -25,6 +35,6 @@ const Author = ({ author, isIndex }) => (
     )}
     <p className={styles['author__subtitle']}>{author.bio}</p>
   </div>
-);
+)
 
-export default Author;
+export default Author

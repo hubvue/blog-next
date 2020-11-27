@@ -1,14 +1,20 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
-import Sidebar from '@/components/Sidebar';
-import Feed from '@/components/Feed';
-import Page from '@/components/Page';
-import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
+import React, { FC } from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Sidebar from '../components/Sidebar'
+import Feed from '../components/Feed'
+import Page from '../components/Page'
+import Pagination from '../components/Pagination'
+import { useSiteMetadata } from '../hooks'
+import { AllMarkDownRemark, PageContext} from '../types'
 
-const CategoryTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+interface Props {
+  data: AllMarkDownRemark
+  pageContext: PageContext
+}
+
+const CategoryTemplate:FC<Props> = ({ data, pageContext }) => {
+  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata()
 
   const {
     category,
@@ -17,10 +23,12 @@ const CategoryTemplate = ({ data, pageContext }) => {
     nextPagePath,
     hasPrevPage,
     hasNextPage,
-  } = pageContext;
+  } = pageContext
 
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `${category} - Page ${currentPage} - ${siteTitle}` : `${category} - ${siteTitle}`;
+  const { edges } = data.allMarkdownRemark
+  const pageTitle = currentPage > 0 
+          ? `${category} - Page ${currentPage} - ${siteTitle}` 
+          : `${category} - ${siteTitle}`
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -35,8 +43,8 @@ const CategoryTemplate = ({ data, pageContext }) => {
         />
       </Page>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query CategoryPage($category: String, $postsLimit: Int!, $postsOffset: Int!) {
@@ -62,6 +70,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default CategoryTemplate;
+export default CategoryTemplate

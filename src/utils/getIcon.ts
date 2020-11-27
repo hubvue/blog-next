@@ -1,4 +1,5 @@
-import { ICONS, IconType } from '@/constants';
+import { ICONS,  } from '../constants';
+import { IconType } from '../types'
 
 export const getIcon = (name: string): Partial<IconType> => {
   let icon: Partial<IconType>;
