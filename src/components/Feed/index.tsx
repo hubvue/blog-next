@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import { Edge } from '../../types'
-import styles from './index.scss'
+import styles from './index.module.scss'
 interface Props {
   edges: Edge[]
 }

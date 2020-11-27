@@ -5,7 +5,7 @@ import Comments from './Comments'
 import Content from './Content'
 import Meta from './Meta'
 import Tags from './Tags'
-import styles from './index.scss'
+import styles from './index.module.scss'
 import { Node } from '../../types'
 interface Props {
   post: Node

@@ -3,7 +3,7 @@ import Author from './Author'
 import Contacts from './Contacts'
 import Copyright from './Copyright'
 import Menu from './Menu'
-import styles from './index.scss'
+import styles from './index.module.scss'
 import { useSiteMetadata } from '../../hooks'
 
 interface Props {

@@ -6,11 +6,13 @@ import Page from '../components/Page'
 import { useSiteMetadata } from '../hooks'
 import { Node } from '../types'
 interface Props {
-  markdownRemark: Node
+  data: {
+    markdownRemark: Node
+  }
 }
-const PageTemplate:FC<Props> = ({ markdownRemark }) => {
+const PageTemplate:FC<Props> = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata()
-  const { html: pageBody, frontmatter } = markdownRemark
+  const { html: pageBody, frontmatter } = data.markdownRemark
   const { title: pageTitle, description: pageDescription = '', socialImage } = frontmatter
   const metaDescription = pageDescription || siteSubtitle
   const socialImageUrl = socialImage?.publicURL

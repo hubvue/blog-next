@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from '../../hooks'
-import styles from './index.scss'
+import styles from './index.module.scss'
 interface Props {
   children: ReactNode,
   title: string,

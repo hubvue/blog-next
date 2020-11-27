@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { withPrefix, Link } from 'gatsby'
-import styles from './index.scss'
+import styles from './index.module.scss'
 
 interface Author {
   name: string

@@ -6,19 +6,22 @@ import { useSiteMetadata } from '../hooks'
 import { Node } from '../types'
 
 interface Props {
-  markdownRemark: Node
+  data: {
+    markdownRemark: Node
+  }
 }
 
-const PostTemplate:FC<Props> = ({ markdownRemark }) => {
+const PostTemplate:FC<Props> = ({ data }) => {
+  console.log('markdownRemark', data.markdownRemark)
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata()
-  const { frontmatter } = markdownRemark
+  const { frontmatter } = data.markdownRemark
   const { title: postTitle, description: postDescription = '', socialImage } = frontmatter
   const metaDescription = postDescription || siteSubtitle
   const socialImageUrl = socialImage?.publicURL
 
   return (
     <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImageUrl} >
-      <Post post={markdownRemark} />
+      <Post post={data.markdownRemark} />
     </Layout>
   )
 }

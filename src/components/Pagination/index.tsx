@@ -2,7 +2,7 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import { PAGINATION } from '../../constants'
-import styles from './index.scss'
+import styles from './index.module.scss'
 
 interface Props {
   prevPagePath: string

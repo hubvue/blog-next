@@ -1,6 +1,6 @@
 import { IconType } from '../../types'
 import React, { FC } from 'react'
-import styles from './index.scss'
+import styles from './index.module.scss'
 interface Props {
   name: string
   icon: Partial<IconType>

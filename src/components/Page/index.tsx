@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, ReactNode, FC } from 'react'
-import styles from './index.scss'
+import styles from './index.module.scss'
 
 interface Props {
   title?: string

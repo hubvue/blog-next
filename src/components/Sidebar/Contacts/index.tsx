@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { getContactHref, getIcon } from '../../../utils'
 import Icon from '../../Icon'
-import styles from './index.scss'
+import styles from './index.module.scss'
 interface Props {
   contacts: Record<string, string>
 }
