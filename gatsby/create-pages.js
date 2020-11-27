@@ -12,19 +12,19 @@ const createPages = async ({ graphql, actions }) => {
   // 404
   createPage({
     path: '/404',
-    component: path.resolve('./src/templates/not-found-template.js')
+    component: path.resolve('./src/templates/NotFoundTemplate.tsx')
   });
 
   // Tags list
   createPage({
     path: '/tags',
-    component: path.resolve('./src/templates/tags-list-template.js')
+    component: path.resolve('./src/templates/TagsListTemplate.tsx')
   });
 
   // Categories list
   createPage({
     path: '/categories',
-    component: path.resolve('./src/templates/categories-list-template.js')
+    component: path.resolve('./src/templates/CategoriesListTemplate.tsx')
   });
 
   // Posts and pages from markdown
@@ -53,13 +53,13 @@ const createPages = async ({ graphql, actions }) => {
     if (_.get(edge, 'node.frontmatter.template') === 'page') {
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve('./src/templates/page-template.js'),
+        component: path.resolve('./src/templates/PageTemplate.tsx'),
         context: { slug: edge.node.fields.slug }
       });
     } else if (_.get(edge, 'node.frontmatter.template') === 'post') {
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve('./src/templates/post-template.js'),
+        component: path.resolve('./src/templates/PostTemplate.tsx'),
         context: { slug: edge.node.fields.slug }
       });
     }

@@ -12,15 +12,18 @@ module.exports = {
   useKatex: false,
   menu: [
     {
-      label: 'Articles',
+      // label: 'Articles',
+      label: '博客',
       path: '/'
     },
     {
-      label: 'About me',
+      // label: 'About me',
+      label: '关于我',
       path: '/pages/about'
     },
     {
-      label: 'Contact me',
+      // label: 'Contact me',
+      label: '联系我',
       path: '/pages/contacts'
     }
   ],
@@ -30,21 +33,21 @@ module.exports = {
     bio: 'The place Kim used to record his study and life.',
     contacts: {
       email: '1191340528@qq.com',
-      facebook: '',
+      facebook: '#',
       telegram: '',
-      twitter: '',
-      github: 'https://github.com/hubvue',
+      twitter: '#',
+      github: 'hubvue',
       rss: '',
       vkontakte: '',
       linkedin: '',
       instagram: '',
       line: '',
       gitlab: '',
-      weibo: '',
+      weibo: '#',
       codepen: '',
       youtube: '',
       soundcloud: '',
-      medium: '',
+      medium: '#',
     }
   }
 };
