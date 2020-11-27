@@ -1,10 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import styles from './index.scss'
-interface Menu {
-  label: string
-  path: string
-}
+import { Menu  } from '../../../types'
 interface Props {
   menus: Menu[]
 }

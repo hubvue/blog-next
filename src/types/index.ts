@@ -48,3 +48,44 @@ export interface PageContext {
   hasPrevPage: boolean
   hasNextPage: boolean
 }
+
+export interface Contacts {
+  facebook: string
+  linkedin: string
+  github: string
+  twitter: string
+  telegram: string
+  instagram: string
+  email: string
+  rss: string
+  vkontakte: string
+  line: string
+  gitlab: string
+  weibo: string
+  codepen: string
+  youtube: string
+  soundcloud: string
+  medium: string,
+  [key: string]: string
+}
+
+export interface Author {
+  name: string
+  bio: string
+  photo: string
+  contacts: Contacts
+}
+
+export interface Menu {
+  label: string
+  path: string
+}
+export interface SiteMetadata {
+  author: Author
+  menu: Menu[]
+  url: string
+  title: string
+  subtitle: string
+  copyright: string
+  disqusShortname: string
+}
