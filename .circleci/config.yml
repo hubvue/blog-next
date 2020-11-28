@@ -58,18 +58,10 @@ jobs:
       - run: echo "----- `npm -v` -----"
       - run: echo "----- install dependencies -----"
       - run: npm install
-      - save_cache:
-        key: v1-dependencies-{{ checksum "package.json" }}
-        paths:
-          - node_modules
       - run: echo "----- build -----"
       - run: yarn build
       - run: echo "----- `pwd` -----"
       - run: echo "----- deploy -----"
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies
       - add_ssh_keys:
         fingerprints:
           - '22:64:53:e5:25:0e:52:fb:75:d6:50:33:b7:ba:9b:47'
