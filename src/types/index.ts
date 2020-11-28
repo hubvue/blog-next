@@ -89,3 +89,8 @@ export interface SiteMetadata {
   copyright: string
   disqusShortname: string
 }
+
+export interface Entry {
+  getIn(args: string[]): string
+}
+export type WidgetFor = (arg: string) => string

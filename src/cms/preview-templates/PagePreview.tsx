@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
+import { PreviewTemplateComponentProps } from 'netlify-cms-core';
 
-const PagePreview  = ({ entry, widgetFor }) => {
+const PagePreview:ComponentType<PreviewTemplateComponentProps>  = ({ entry, widgetFor }) => {
   const body = widgetFor('body');
   const title = entry.getIn(['data', 'title']);
 

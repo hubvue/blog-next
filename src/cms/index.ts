@@ -1,6 +1,6 @@
 import CMS from 'netlify-cms-app';
-import PagePreview from './preview-templates/page-preview';
-import PostPreview from './preview-templates/post-preview';
+import PagePreview from './preview-templates/PagePreview';
+import PostPreview from './preview-templates/PostPreview';
 
 CMS.registerPreviewTemplate('pages', PagePreview);
 CMS.registerPreviewTemplate('posts', PostPreview);
