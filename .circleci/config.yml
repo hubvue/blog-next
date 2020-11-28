@@ -54,6 +54,8 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - run: echo "----- `node -v` -----"
+      - run: echo "----- `npm -v` -----"
       - run: npm install -g yarn
       - run: echo "----- install dependencies -----"
       - run: yarn install
