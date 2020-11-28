@@ -12,7 +12,7 @@ const Feed: FC<Props> = ({ edges }) => {
       {edges.map((edge) => (
         <div className={styles['feed__item']} key={edge.node.fields.slug}>
           <div className={styles['feed__item-meta']}>
-            <time className={styles['feed__item-meta-time']} dateTime={ new Date(edge.node.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}>
+            <time className={styles['feed__item-meta-time']} dateTime={ new Date(edge.node.frontmatter.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}>
             { new Date(edge.node.frontmatter.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
             </time>
             <span className={styles['feed__item-meta-divider']} />
