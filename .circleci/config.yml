@@ -56,6 +56,5 @@ jobs:
       - checkout
       - run: echo "----- `node -v` -----"
       - run: echo "----- `npm -v` -----"
-      - run: sudo npm install -g yarn
       - run: echo "----- install dependencies -----"
-      - run: yarn install
+      - run: npm install
