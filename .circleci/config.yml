@@ -33,14 +33,14 @@ jobs:
           else
             echo "Not master branch, dry run only"
       - run: echo "----- deploy done -----"
-workflows:
-  version: 2
-  scheduled-workflow:
-    # triggers:
-    #   - shedule:
-    #     cron: '0 0 * * *'
-    #     filters:
-    #       branches:
-    #         only: master
-    jobs:
-      - run: echo "test"
+# workflows:
+#   version: 2
+#   scheduled-workflow:
+#     # triggers:
+#     #   - shedule:
+#     #     cron: '0 0 * * *'
+#     #     filters:
+#     #       branches:
+#     #         only: master
+#     jobs:
+#       - run: echo "test"
