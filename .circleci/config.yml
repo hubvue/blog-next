@@ -48,7 +48,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:10.20.1
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD
@@ -56,6 +56,6 @@ jobs:
       - checkout
       - run: echo "----- `node -v` -----"
       - run: echo "----- `npm -v` -----"
-      - run: npm install -g yarn
+      - run: sudo npm install -g yarn
       - run: echo "----- install dependencies -----"
       - run: yarn install
