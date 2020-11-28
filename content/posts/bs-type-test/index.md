@@ -2,7 +2,7 @@
 title: better-scroll类型测试实践
 date: '2020-09-10'
 template: 'post'
-draft: true
+draft: false
 slug: better-scroll类型测试实践
 category: better-scroll
 tags:

@@ -3,7 +3,7 @@ title: 从V8对类型的优化上谈为什么要使用TypeScript
 date: '2019-09-14'
 template: 'post'
 draft: false
-slug: 从V8对类型的优化上谈为什么要使用TypeScript
+slug: V8对类型的优化
 category: TypeScript
 tags:
   - 'TypeScript'
@@ -20,7 +20,8 @@ JavaScript 语言是解释性语言还是编译性语言其实说法都不固定
 
 先来一张图
 
-![](./1.png)
+![](./1.jpg)
+
 首先 V8 引擎会将 JavaScript 代码解析成 AST（抽象语法树），这个过程是相当慢的，代码越多解析过程的时间耗费就越长。AST 解析结果可以通过[AST](https://astexplorer.net/)来体验一番。
 
 来看下面代码
@@ -145,7 +146,7 @@ const fun = () => {
 
 经过 AST 解析之后，Ignition 负责将 AST 转换成 Bytecode(字节码),TurboFan 负责编译出优化后的 Machine Code，并且 Machine Code 在执行效率上优于 Bytecode。
 
-![](./2.png)
+![](./2.jpg)
 
 最后就可以执行了。
 
