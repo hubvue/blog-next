@@ -94,7 +94,7 @@ module.exports = {
               }
             `,
           output: '/rss.xml',
-          title: siteConfig.title
+          title: siteConfig.title,
         }]
       }
     },
@@ -187,7 +187,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#F7A046',
         display: 'standalone',
-        icon: 'static/photo.jpg'
+        icon: 'static/favicon.ico'
       },
     },
     'gatsby-plugin-offline',

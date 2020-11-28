@@ -9,6 +9,7 @@ module.exports = {
   disqusShortname: '',
   postsPerPage: 5, // 每页展示几篇文章
   googleAnalyticsId: 'UA-73379983-2',
+  icon: '/static/favicon.ico',
   useKatex: false,
   menu: [
     {
