@@ -68,10 +68,10 @@ jobs:
       - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
       - run: ls
       - run:
-        name: deploy
-        command: |
-          if [ "${CIRCLE_BRANCH}" = "master" ]; then
-            scp -r public $SSH_USER@SSH_IP:~
-          else
-            echo "Not master branch, dry run only"
+          name: deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              scp -r public $SSH_USER@SSH_IP:~
+            else
+              echo "Not master branch, dry run only"
       - run: echo "----- deploy done -----"
