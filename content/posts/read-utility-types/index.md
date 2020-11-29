@@ -4,9 +4,9 @@ date: '2020-08-13'
 template: 'post'
 draft: false
 slug: 解读utility-types
-category: Typescript
+category: TypeScript
 tags:
-  - 'Typescript'
+  - 'TypeScript'
 description: 本篇文章用于解读utility-types包中mapped-types文件下的高级类型实现
 # socialImage:
 ---

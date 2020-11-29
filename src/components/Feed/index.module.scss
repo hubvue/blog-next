@@ -39,7 +39,6 @@
         font-size: $typographic-small-font-size;
         color: $color-base;
         font-weight: 600;
-        text-transform: uppercase;
       }
 
       &-divider {
@@ -51,7 +50,6 @@
           font-size: $typographic-small-font-size;
           color: $color-secondary;
           font-weight: 600;
-          text-transform: uppercase;
 
           &:hover,
           &:focus {
