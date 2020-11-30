@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Feed: FC<Props> = ({ edges }) => {
-  console.log(edges)
   return (
     <div className={styles['feed']}>
       {edges.map((edge) => (
