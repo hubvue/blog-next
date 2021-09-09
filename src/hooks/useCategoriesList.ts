@@ -22,4 +22,3 @@ export const useCategoriesList = () => {
 
   return allMarkdownRemark.group;
 };
-
